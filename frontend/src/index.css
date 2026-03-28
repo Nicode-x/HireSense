@@ -1,0 +1,452 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+/* ─── CSS Variables — Coolors Palette: #ccd5ae #e9edc9 #fefae0 #faedcd #d4a373 ── */
+:root {
+  /* Warm sage/wheat palette */
+  --c-sage:      #ccd5ae;   /* sage green */
+  --c-moss:      #e9edc9;   /* light moss */
+  --c-cream:     #fefae0;   /* cream white */
+  --c-wheat:     #faedcd;   /* warm wheat */
+  --c-tan:       #d4a373;   /* tan/caramel */
+
+  /* Derived dark tones for text/depth */
+  --c-dark:      #3d3522;   /* dark warm brown */
+  --c-mid:       #6b5f3e;   /* mid warm brown */
+  --c-muted:     #a08c6a;   /* muted warm */
+  --c-subtle:    #c4b49a;   /* subtle warm */
+
+  /* Accent is the tan caramel */
+  --accent:       var(--c-tan);
+  --accent-light: #e8c49e;
+  --accent-dark:  #b8843f;
+
+  /* Glass with warm tones */
+  --glass:        rgba(254, 250, 224, 0.12);
+  --glass-border: rgba(212, 163, 115, 0.25);
+  --shadow-glow:  0 0 40px rgba(212, 163, 115, 0.2);
+
+  /* Page backgrounds */
+  --bg-main:  #fefae0;
+  --bg-sec:   #faedcd;
+  --bg-card:  rgba(254, 250, 224, 0.8);
+
+  --radius-xl:  1.5rem;
+  --radius-2xl: 2rem;
+}
+
+/* ─── Base ────────────────────────────────────────────────────────────────── */
+html { scroll-behavior: smooth; }
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: var(--bg-main);
+  color: var(--c-dark);
+  overflow-x: hidden;
+  cursor: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── Custom Cursor ───────────────────────────────────────────────────────── */
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--c-tan);
+  border-radius: 50%;
+  position: fixed;
+  top: 0; left: 0;
+  pointer-events: none;
+  z-index: 99999;
+  transform: translate(-50%, -50%);
+  transition: width 0.15s, height 0.15s, background 0.15s;
+}
+
+.cursor-ring {
+  width: 36px;
+  height: 36px;
+  border: 1.5px solid rgba(212, 163, 115, 0.7);
+  border-radius: 50%;
+  position: fixed;
+  top: 0; left: 0;
+  pointer-events: none;
+  z-index: 99998;
+  transform: translate(-50%, -50%);
+  transition: width 0.2s, height 0.2s, border-color 0.2s;
+}
+
+.cursor-dot.hovering {
+  width: 12px;
+  height: 12px;
+  background: var(--accent-dark);
+}
+
+.cursor-ring.hovering {
+  width: 56px;
+  height: 56px;
+  border-color: var(--accent-dark);
+}
+
+/* ─── Selection ───────────────────────────────────────────────────────────── */
+::selection {
+  background: var(--c-tan);
+  color: var(--c-cream);
+}
+
+/* ─── Scrollbar ───────────────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-main); }
+::-webkit-scrollbar-thumb {
+  background: var(--c-subtle);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover { background: var(--c-tan); }
+
+/* ─── Keyframe Animations ─────────────────────────────────────────────────── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-30px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(30px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(212, 163, 115, 0.2); }
+  50%       { box-shadow: 0 0 40px rgba(212, 163, 115, 0.45); }
+}
+@keyframes countUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+@keyframes floatY {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-12px); }
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes paperFloat {
+  0%, 100% { transform: translateY(0px) rotate(-1deg); }
+  50%       { transform: translateY(-18px) rotate(1deg); }
+}
+@keyframes paperDrift {
+  0%, 100% { transform: translateY(0px) rotate(2deg); }
+  50%       { transform: translateY(-12px) rotate(-2deg); }
+}
+@keyframes lineSlide {
+  0%   { transform: scaleX(0); transform-origin: left; }
+  100% { transform: scaleX(1); transform-origin: left; }
+}
+@keyframes dotBounce {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50%       { transform: translateY(-6px) scale(1.15); }
+}
+
+.animate-fadeInUp   { animation: fadeInUp   0.8s ease-out both; }
+.animate-fadeIn     { animation: fadeIn     0.6s ease-out both; }
+.animate-slideLeft  { animation: slideInLeft  0.7s ease-out both; }
+.animate-slideRight { animation: slideInRight 0.7s ease-out both; }
+.animate-floatY     { animation: floatY 4s ease-in-out infinite; }
+
+/* ─── Scroll Reveal ───────────────────────────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal.delay-1 { transition-delay: 0.1s; }
+.reveal.delay-2 { transition-delay: 0.2s; }
+.reveal.delay-3 { transition-delay: 0.3s; }
+.reveal.delay-4 { transition-delay: 0.4s; }
+
+/* ─── Premium Button ──────────────────────────────────────────────────────── */
+.btn-premium {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.875rem 2.25rem;
+  border-radius: 3rem;
+  background: linear-gradient(135deg, var(--c-tan), #c4834a);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.9375rem;
+  letter-spacing: 0.02em;
+  border: none;
+  cursor: none;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 20px rgba(212, 163, 115, 0.4), 0 0 15px rgba(212, 163, 115, 0.2);
+}
+
+.btn-premium::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent 30%, rgba(255,255,255,0.25) 50%, transparent 70%);
+  background-size: 200% 100%;
+  animation: shimmer 2.5s infinite;
+  pointer-events: none;
+}
+
+.btn-premium:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 8px 32px rgba(212, 163, 115, 0.5), 0 0 25px rgba(212, 163, 115, 0.3);
+}
+
+.btn-premium:active { transform: translateY(0) scale(0.98); }
+
+/* ─── Outline Button ─────────────────────────────────────────────────────── */
+.btn-outline {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 2rem;
+  border-radius: 3rem;
+  background: transparent;
+  color: var(--c-dark);
+  font-weight: 600;
+  border: 1.5px solid var(--glass-border);
+  cursor: none;
+  transition: all 0.2s ease;
+}
+
+.btn-outline:hover {
+  background: rgba(212, 163, 115, 0.12);
+  border-color: var(--c-tan);
+  color: var(--c-tan);
+  transform: translateY(-1px);
+}
+
+/* ─── Premium Filter Inputs ─────────────────────────────────────────────── */
+.filter-premium {
+  background: rgba(254, 250, 224, 0.9);
+  border: 1.5px solid rgba(212, 163, 115, 0.3);
+  color: var(--c-dark);
+  border-radius: 1rem;
+  padding: 0.75rem 1.25rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  outline: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.05), 0 4px 20px rgba(212, 163, 115, 0.15);
+  cursor: pointer;
+}
+
+.filter-premium::placeholder { color: var(--c-muted); font-weight: 400; }
+
+.filter-premium:hover {
+  border-color: rgba(212, 163, 115, 0.6);
+  background: var(--c-cream);
+  transform: translateY(-2px);
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.05), 0 8px 32px rgba(212, 163, 115, 0.25);
+}
+
+.filter-premium:focus {
+  border-color: var(--c-tan);
+  transform: translateY(-2px);
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.05), 0 8px 32px rgba(212, 163, 115, 0.3), 0 0 0 3px rgba(212, 163, 115, 0.12);
+}
+
+/* ─── Glassmorphism Cards ────────────────────────────────────────────────── */
+.glass-card {
+  background: rgba(254, 250, 224, 0.75);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(212, 163, 115, 0.2);
+  border-radius: var(--radius-2xl);
+  box-shadow: 0 20px 60px rgba(61, 53, 34, 0.12), 0 4px 16px rgba(212, 163, 115, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 28px 80px rgba(61, 53, 34, 0.18), var(--shadow-glow);
+}
+
+/* ─── Input Styling ──────────────────────────────────────────────────────── */
+.input-premium {
+  width: 100%;
+  padding: 0.875rem 1.25rem;
+  background: rgba(254, 250, 224, 0.9);
+  border: 1.5px solid rgba(212, 163, 115, 0.25);
+  border-radius: 1rem;
+  color: var(--c-dark);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9375rem;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  cursor: text;
+}
+
+.input-premium::placeholder { color: var(--c-muted); }
+
+.input-premium:focus {
+  border-color: var(--c-tan);
+  box-shadow: 0 0 0 3px rgba(212, 163, 115, 0.15);
+  background: var(--c-cream);
+}
+
+/* ─── Section Headers ────────────────────────────────────────────────────── */
+.section-eyebrow {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--c-tan);
+  margin-bottom: 0.75rem;
+}
+
+.section-title {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--c-dark);
+  letter-spacing: -0.02em;
+}
+
+.section-sub {
+  color: var(--c-mid);
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  max-width: 42ch;
+}
+
+/* ─── Badge / Chip ──────────────────────────────────────────────────────── */
+.badge-skill {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  background: rgba(212, 163, 115, 0.12);
+  border: 1px solid rgba(212, 163, 115, 0.25);
+  color: var(--c-mid);
+  transition: background 0.2s;
+}
+
+.badge-skill.matched {
+  background: rgba(110, 231, 183, 0.12);
+  border-color: rgba(110, 231, 183, 0.3);
+  color: #2d7a5f;
+}
+
+.badge-skill.missing {
+  background: rgba(239, 68, 68, 0.08);
+  border-color: rgba(239, 68, 68, 0.25);
+  color: #c0392b;
+}
+
+/* ─── Score Bar ─────────────────────────────────────────────────────────── */
+.score-bar-track {
+  width: 100%;
+  height: 6px;
+  background: rgba(212, 163, 115, 0.15);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.score-bar-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--c-tan), var(--c-sage));
+  transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ─── Rank Badges ───────────────────────────────────────────────────────── */
+.rank-gold   { background: linear-gradient(135deg, #f59e0b, #fde68a); color: #78350f; }
+.rank-silver { background: linear-gradient(135deg, #9ca3af, #e5e7eb); color: #374151; }
+.rank-bronze { background: linear-gradient(135deg, #b45309, #fcd34d); color: #451a03; }
+
+/* ─── Loading Spinner ────────────────────────────────────────────────────── */
+.spinner {
+  width: 24px;
+  height: 24px;
+  border: 2px solid rgba(212, 163, 115, 0.2);
+  border-top-color: var(--c-tan);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+/* ─── Drag-drop zone ─────────────────────────────────────────────────────── */
+.drop-zone {
+  border: 2px dashed rgba(212, 163, 115, 0.35);
+  border-radius: var(--radius-xl);
+  transition: border-color 0.2s, background 0.2s;
+}
+.drop-zone.drag-over {
+  border-color: var(--c-tan);
+  background: rgba(212, 163, 115, 0.08);
+}
+
+/* ─── Navbar link active indicator ─────────────────────────────────────── */
+.nav-link {
+  position: relative;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--c-mid);
+  transition: color 0.2s;
+  cursor: none;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px; left: 0;
+  width: 0; height: 1.5px;
+  background: var(--c-tan);
+  transition: width 0.25s ease;
+}
+.nav-link:hover { color: var(--c-dark); }
+.nav-link:hover::after,
+.nav-link.active::after { width: 100%; }
+.nav-link.active { color: var(--c-dark); }
+
+/* ─── Password strength bar ─────────────────────────────────────────────── */
+.strength-bar {
+  height: 4px;
+  border-radius: 999px;
+  transition: width 0.3s, background 0.3s;
+}
+
+/* ─── Avatar ring ────────────────────────────────────────────────────────── */
+.avatar-ring {
+  border: 2px solid rgba(212, 163, 115, 0.3);
+  border-radius: 50%;
+  transition: border-color 0.2s;
+}
+.avatar-ring:hover { border-color: var(--c-tan); }
+
+/* ─── Resume Background Canvas ───────────────────────────────────────────── */
+.resume-bg-canvas {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.7;
+}
+
+/* ─── Warm section backgrounds ───────────────────────────────────────────── */
+.bg-warm-primary   { background: #fefae0; }
+.bg-warm-secondary { background: #faedcd; }
+.bg-warm-third     { background: #e9edc9; }
