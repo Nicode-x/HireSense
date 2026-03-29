@@ -29,6 +29,12 @@ The platform is designed with a scalable microservices architecture, combining a
 
 ## Screenshots
 
+### Landing Page
+![Hero Landing Page](./screenshots/hero.png)
+
+### Resume Upload and Analysis Interface
+![Upload Form](./screenshots/upload-form.png)
+
 ### Recruiter Dashboard
 ![Recruiter Dashboard](./screenshots/dashboard.png)
 
@@ -37,12 +43,6 @@ The platform is designed with a scalable microservices architecture, combining a
 
 ### Score Comparison Analytics
 ![Score Comparison](./screenshots/score-comparison.png)
-
-### Resume Upload and Analysis Interface
-![Upload Form](./screenshots/upload-form.png)
-
-### Landing Page
-![Hero Landing Page](./screenshots/hero.png)
 
 ---
 
@@ -71,9 +71,6 @@ This report demonstrates the platform’s ability to transform raw resume analys
 
 ### Hiring Dashboard Preview
 ![Hiring Dashboard](./report-images/report-page-2.png)
-
-### Candidate Evaluation Preview
-![Candidate Evaluation](./report-images/report-page-3.png)
 
 ### Visual Hiring Insights Preview
 ![Visual Hiring Insights](./report-images/report-page-4.png)
