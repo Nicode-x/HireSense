@@ -16,8 +16,6 @@ A premium, enterprise-grade resume analyzer built with **React 19**, **Node.js**
 ---
 
 ## Screenshots
-<details>
-<summary>Click to view screenshots of the HireSense Dashboard</summary>
 
 | Recruiter Dashboard | Ranked Candidates |
 | :---: | :---: |
@@ -26,8 +24,6 @@ A premium, enterprise-grade resume analyzer built with **React 19**, **Node.js**
 | ![Score Comparison](./screenshots/score-comparison.png) | ![Upload Form](./screenshots/upload-form.png) |
 | **Hero Landing Page** | |
 | ![Hero Landing Page](./screenshots/hero.png) | |
-
-</details>
 
 ---
 
