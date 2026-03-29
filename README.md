@@ -1,233 +1,137 @@
-# 🚀 HireSense AI — Intelligent Resume Screening Platform
+# 🚀 HireSense AI — Enterprise Resume Screening & Hiring Intelligence
 
-![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
-![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
-![Express](https://img.shields.io/badge/Express.js-404D59?style=for-the-badge)
-![FastAPI](https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi)
-![MySQL](https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white)
-![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)
-![Three.js](https://img.shields.io/badge/Three.js-000000?style=for-the-badge&logo=three.js&logoColor=white)
-![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)
+<p align="center">
+  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
+  <img src="https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white" />
+  <img src="https://img.shields.io/badge/Express.js-404D59?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi" />
+  <img src="https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white" />
+  <img src="https://img.shields.io/badge/TailwindCSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" />
+  <img src="https://img.shields.io/badge/Three.js-000000?style=for-the-badge&logo=three.js&logoColor=white" />
+  <img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white" />
+</p>
 
----
-
-## 🌟 Overview
-
-**HireSense AI** is a full-stack, AI-powered resume screening platform designed to help recruiters **analyze, rank, and evaluate candidates instantly**.
-
-It leverages **Natural Language Processing (NLP)** and **semantic similarity models** to match resumes with job descriptions and generate **data-driven hiring insights**.
-
-> Built with a scalable microservices architecture combining **React + Node.js + FastAPI**
+<p align="center">
+  <b>AI-powered Resume Screening Platform</b><br/>
+  Built for recruiters to intelligently rank, analyze, and compare resumes against job descriptions using NLP.
+</p>
 
 ---
 
-## ✨ Key Highlights
+## ✨ Overview
 
-- 🧠 **AI Resume Matching Engine** using Sentence Transformers  
-- 📊 **Recruiter Dashboard** with analytics & candidate ranking  
-- 📄 **Automated PDF Hiring Reports (Enterprise-grade)**  
-- 📈 **Skill Gap & Match Analysis**  
-- ⚡ **FastAPI NLP Microservice Architecture**  
-- 🔐 **JWT Authentication & Secure APIs**  
-- 🗂 **Persistent Candidate History Tracking**  
-- 🎨 **Modern UI with Tailwind + Animations + Three.js**
+**HireSense AI** is a full-stack **AI-powered hiring intelligence platform** that helps recruiters and hiring teams:
 
----
+- Upload **multiple resumes**
+- Paste a **job description**
+- Automatically **score and rank candidates**
+- Analyze **matched vs missing skills**
+- Generate a **professional hiring report PDF**
+- View **analytics dashboards** with recruiter-ready insights
 
-## 📸 Product Preview
-
-### 🏠 Landing Experience
-![Landing](./assets/home-landing.png)
+It combines a **modern React frontend**, a **Node.js/Express backend**, and a dedicated **FastAPI NLP microservice** powered by **Sentence Transformers + PyTorch** for semantic resume matching.
 
 ---
 
-### 📊 Recruiter Dashboard
-![Dashboard](./assets/dashboard.png)
+## 🌟 Key Features
+
+- 🤖 **AI Resume Matching**  
+  Uses semantic similarity and keyword-based skill matching to compare resumes with job descriptions.
+
+- 📄 **PDF Resume Parsing**  
+  Extracts text from uploaded resumes for automated evaluation.
+
+- 📊 **Candidate Ranking Dashboard**  
+  Displays shortlisted candidates ranked by final score.
+
+- 🧠 **Skill Gap Analysis**  
+  Shows matched skills and missing skills for every candidate.
+
+- 📈 **Analytics & Visual Insights**  
+  Interactive charts for score comparison and skill distribution.
+
+- 🧾 **Enterprise Hiring Report Export**  
+  Generates recruiter-friendly PDF reports for hiring decisions.
+
+- 🔐 **Authentication System**  
+  Secure login and registration using JWT auth.
+
+- 🎨 **Premium UI/UX**  
+  Modern glassmorphism interface with smooth animations and 3D visuals.
 
 ---
 
-### 🧠 Analyze Candidates
-![Analyze](./assets/analyze-page.png)
+## 🖼️ Project Preview
+
+### 🔹 Hero / Landing Page
+<p align="center">
+  <img src="./assets/hero.png" width="90%" alt="Hero Section" />
+</p>
+
+### 🔹 Upload & Analyze Interface
+<p align="center">
+  <img src="./assets/upload-form.png" width="90%" alt="Upload Form" />
+</p>
+
+### 🔹 Recruiter Dashboard
+<p align="center">
+  <img src="./assets/dashboard.png" width="90%" alt="Recruiter Dashboard" />
+</p>
+
+### 🔹 Ranked Candidate Results
+<p align="center">
+  <img src="./assets/ranked-dashboard.png" width="90%" alt="Ranked Candidates" />
+</p>
+
+### 🔹 Score Comparison Analytics
+<p align="center">
+  <img src="./assets/score-comparison.png" width="90%" alt="Score Comparison" />
+</p>
 
 ---
 
-### 🏆 AI Ranked Results
-![Results](./assets/results-page.png)
+## 📑 Demo Hiring Report
 
----
+HireSense AI can generate a professional **candidate screening report** after resume analysis.
 
-### 📜 Analysis History
-![History](./assets/history-page.png)
+### 🔹 Report Preview
+<p align="center">
+  <img src="./assets/report-preview.png" width="80%" alt="Hiring Report Preview" />
+</p>
 
----
-
-### 👤 User Profile
-![Profile](./assets/profile-page.png)
-
----
-
-## 📄 AI-Generated Hiring Report
-
-HireSense generates a **professional recruiter-ready PDF report** including:
-
-- Executive summary
-- Candidate rankings
-- Skill match analysis
-- AI explanations
-- Visual analytics
-
-👉 **View Sample Report:**  
-[📥 Download Report](./assets/report.pdf)
-
-📊 This report includes real candidate scoring, ranking, and insights as shown in your generated output :contentReference[oaicite:0]{index=0}
+### 🔹 Download Full Demo Report
+<p align="center">
+  <a href="./assets/demo-report.pdf" target="_blank">
+    <img src="https://img.shields.io/badge/View%20Demo%20Report-PDF-red?style=for-the-badge&logo=adobeacrobatreader&logoColor=white" />
+  </a>
+</p>
 
 ---
 
 ## 🛠️ Tech Stack
 
-### Frontend
-- React.js (Vite)
-- Tailwind CSS
-- Framer Motion
-- Three.js
-
-### Backend
-- Node.js
-- Express.js
-
-### AI / NLP Service
-- Python
-- FastAPI
-- Sentence Transformers
-- PyTorch
-
-### Database & Auth
-- MySQL
-- JWT Authentication
-- bcrypt.js
+| Layer | Technology |
+|------|------------|
+| **Frontend** | React 19, Vite, Tailwind CSS, Framer Motion |
+| **3D / UI** | Three.js, React Three Fiber, Drei |
+| **Charts / Reports** | Recharts, html2canvas, jsPDF |
+| **Backend** | Node.js, Express.js |
+| **AI / NLP Service** | Python, FastAPI, SentenceTransformers, PyTorch |
+| **Database** | MySQL |
+| **Authentication** | JWT, bcryptjs |
+| **File Handling** | Multer, PDF text extraction |
 
 ---
 
-## 🧠 System Architecture
+## 🧠 How It Works
 
-```text
-Frontend (React)
-        ↓
-Node.js Backend (API Layer)
-        ↓
-FastAPI NLP Microservice
-        ↓
-Semantic Similarity Engine (Sentence Transformers)
-        ↓
-Database (MySQL)
-```
-
----
-
-## ⚙️ Setup Instructions
-
-### 1️⃣ Clone Repo
-```bash
-git clone https://github.com/Nicode-x/HireSense.git
-cd HireSense
-```
-
-### 2️⃣ Install Dependencies
-
-```bash
-# Frontend
-cd frontend && npm install
-
-# Backend
-cd ../backend && npm install
-
-# NLP Service
-cd ../nlp-service && pip install -r requirements.txt
-```
-
----
-
-### 3️⃣ Environment Setup
-
-Create `.env` in backend:
-
-```env
-PORT=5000
-DB_HOST=localhost
-DB_USER=root
-DB_PASSWORD=your_password
-DB_NAME=hiresense
-JWT_SECRET=your_secret
-NLP_SERVICE_URL=http://127.0.0.1:8000
-```
-
----
-
-### ▶️ Run Application
-
-```bash
-# Start NLP Service
-cd nlp-service
-python -m uvicorn app.main:app --reload --port 8000
-
-# Start Backend
-cd backend
-npm run dev
-
-# Start Frontend
-cd frontend
-npm run dev
-```
-
----
-
-## ⚡ How It Works
-
-1. Upload resumes + job description  
-2. Backend sends data to NLP microservice  
-3. NLP converts text into embeddings  
-4. Semantic similarity is calculated  
-5. Candidates are ranked based on:
-   - Skill match
-   - Context relevance
-   - Resume quality  
-6. Results + insights are displayed  
-7. PDF report is generated  
-
----
-
-## 🚀 Future Scope
-
-- AI Resume Suggestions  
-- ATS Score Optimization  
-- Recruiter Team Collaboration  
-- Docker & Cloud Deployment  
-- Interview Recommendation System  
-
----
-
-## 👨‍💻 Author
-
-**Nikhil Malik**  
-Frontend-Focused Full Stack Developer  
-
-💡 Skilled in:
-- React / Next.js / Three.js
-- Node.js / Express
-- AI-integrated applications
-- Modern UI/UX systems
-
----
-
-## ⭐ Support
-
-If you found this project useful:
-
-👉 Star the repository  
-👉 Share it with others  
-
----
-
-## 📌 Final Note
-
-This is not just a project — it’s a **production-style AI SaaS concept** for modern recruitment systems.
+```mermaid
+flowchart LR
+A[Recruiter uploads resumes + JD] --> B[Node.js Backend]
+B --> C[FastAPI NLP Service]
+C --> D[Resume Text Extraction]
+D --> E[Sentence Transformer Embeddings]
+E --> F[Semantic Similarity + Skill Match]
+F --> G[Candidate Scores + Insights]
+G --> H[MySQL Database]
+H --> I[React Dashboard + PDF Report]
